@@ -359,7 +359,7 @@ fi
 [ -n "${OVPN_FRAGMENT:-}" ] && echo "fragment $OVPN_FRAGMENT" >> "$conf"
 
 [ "$OVPN_DNS" == "1" ] && for i in "${OVPN_DNS_SERVERS[@]}"; do
-  process_push_config "dhcp-option DNS $i"
+  process_push_config "dhcp-option \"DNS $i\""
 done
 
 # Append route commands
